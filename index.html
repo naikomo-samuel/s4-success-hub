@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Globalisation – Revision Sheet | Senior Four History</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --gold: #f0a500;
+    --gold2: #ffd166;
+    --green: #3fb950;
+    --red: #f85149;
+    --blue: #58a6ff;
+    --purple: #bc8cff;
+    --cyan: #39d353;
+    --text: #e6edf3;
+    --muted: #8b949e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    padding: 20px 16px 60px;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    padding: 40px 20px 30px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 80px; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold2));
+    border-radius: 2px;
+  }
+  .subject-tag {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 900;
+    line-height: 1.1;
+    background: linear-gradient(135deg, var(--gold), var(--gold2), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    animation: fadeUp 0.4s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+  }
+  .section-header:hover { background: rgba(255,255,255,0.03); }
+  .section-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    flex: 1;
+  }
+  .toggle {
+    color: var(--muted);
+    font-size: 18px;
+    transition: transform 0.3s;
+  }
+  .section.open .toggle { transform: rotate(180deg); }
+  .section-body {
+    display: none;
+    padding: 0 18px 18px;
+    border-top: 1px solid var(--border);
+  }
+  .section.open .section-body { display: block; }
+
+  /* COLORS PER SECTION */
+  .s1 .section-header { background: rgba(240,165,0,0.08); }
+  .s1 .section-icon { background: rgba(240,165,0,0.15); }
+  .s1 .section-title { color: var(--gold); }
+
+  .s2 .section-header { background: rgba(63,185,80,0.08); }
+  .s2 .section-icon { background: rgba(63,185,80,0.15); }
+  .s2 .section-title { color: var(--green); }
+
+  .s3 .section-header { background: rgba(248,81,73,0.08); }
+  .s3 .section-icon { background: rgba(248,81,73,0.15); }
+  .s3 .section-title { color: var(--red); }
+
+  .s4 .section-header { background: rgba(88,166,255,0.08); }
+  .s4 .section-icon { background: rgba(88,166,255,0.15); }
+  .s4 .section-title { color: var(--blue); }
+
+  .s5 .section-header { background: rgba(188,140,255,0.08); }
+  .s5 .section-icon { background: rgba(188,140,255,0.15); }
+  .s5 .section-title { color: var(--purple); }
+
+  .s6 .section-header { background: rgba(57,211,83,0.08); }
+  .s6 .section-icon { background: rgba(57,211,83,0.15); }
+  .s6 .section-title { color: var(--cyan); }
+
+  .s7 .section-header { background: rgba(255,209,102,0.08); }
+  .s7 .section-icon { background: rgba(255,209,102,0.15); }
+  .s7 .section-title { color: var(--gold2); }
+
+  .s8 .section-header { background: rgba(88,166,255,0.08); }
+  .s8 .section-icon { background: rgba(88,166,255,0.15); }
+  .s8 .section-title { color: var(--blue); }
+
+  /* DEFINITION BOX */
+  .def-box {
+    background: rgba(240,165,0,0.07);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin: 14px 0 8px;
+    font-size: 14px;
+    color: #ccc;
+  }
+  .def-box strong { color: var(--gold2); }
+
+  /* POINT LIST */
+  .points { list-style: none; margin-top: 12px; }
+  .points li {
+    padding: 7px 0 7px 20px;
+    position: relative;
+    font-size: 13.5px;
+    color: #c9d1d9;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .points li:last-child { border-bottom: none; }
+  .points li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-size: 11px;
+    top: 9px;
+  }
+  .points li strong { color: var(--text); font-weight: 600; }
+
+  /* COLORED BULLETS */
+  .green-bullet li::before { color: var(--green); }
+  .red-bullet li::before { color: var(--red); }
+  .blue-bullet li::before { color: var(--blue); }
+  .purple-bullet li::before { color: var(--purple); }
+  .cyan-bullet li::before { color: var(--cyan); }
+  .gold-bullet li::before { color: var(--gold); }
+
+  /* SUB-HEADING */
+  .sub-heading {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 16px 0 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* TWO COLUMN */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  @media(max-width: 500px) { .two-col { grid-template-columns: 1fr; } }
+  .col-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .col-card .col-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* KEY TERM PILLS */
+  .pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .pill {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: var(--text);
+  }
+
+  /* EXAM TIP */
+  .exam-tip {
+    background: rgba(255,209,102,0.07);
+    border: 1px dashed var(--gold2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 14px;
+    font-size: 13px;
+  }
+  .exam-tip .tip-label {
+    color: var(--gold2);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .footer span { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="subject-tag">History & Political Education • Senior Four • NLSC Uganda</div>
+  <h1>Globalisation</h1>
+  <div class="subtitle">Comprehensive Revision Sheet — Activity of Integration Preparation</div>
+</div>
+
+<!-- SECTION 1: DEFINITION & KEY TERMS -->
+<div class="section s1 open">
+  <div class="section-header" onclick="toggle(this)">
+    <div class="section-icon">🌐</div>
+    <div class="section-title">Definition & Key Terms</div>
+    <div class="toggle">▾</div>
+  </div>
+  <div class="section-body">
+    <div class="def-box">
+      <strong>Globalisation</strong> is the process by which the world is becoming increasingly interconnected as a result of massively increased trade and cultural exchange. It involves the integration of economies, cultures, markets, and policies around the world.
+    </div>
+    <div class="sub-heading" style="color:var(--gold)">Key Terms to Know</div>
+    <div class="pill-list">
+      <span class="pill">Multilateral Corporations (MNCs)</span>
+      <span class="pill">Trade Blocs (EAC, NAFTA)</span>
+      <span class="pill">Balance of Payments</span>
+      <span class="pill">NGOs</span>
+      <span class="pill">CBOs</span>
+      <span class="pill">Foreign Aid</span>
+      <span class="pill">Neo-colonialism</span>
+      <span class="pill">Cultural Imperialism</span>
+      <span class="pill">Containerization</span>
+      <span class="pill">Financial Liberalization</span>
+      <span class="pill">Intra-community Trade</span>
+      <span class="pill">Offshoring</span>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: FACTORS PROMOTING GLOBALISATION IN EAST AFRICA/UGANDA -->
+<div class="section s2">
+  <div class="section-header" onclick="toggle(this)">
+    <div class="section-icon">⚙️</div>
+    <div class="section-title">Factors Promoting Globalisation in East Africa / Uganda</div>
+    <div class="toggle">▾</div>
+  </div>
+  <div class="section-body">
+    <ul class="points cyan-bullet">
+      <li><strong>Digital revolution & technology</strong> — Internet reduced communication costs; easy access to goods and services globally</li>
+      <li><strong>Containerization</strong> — Cut cost of ocean shipping; made bulk transport efficient</li>
+      <li><strong>Transnational & multilateral corporations</strong> — Need for lower labour costs abroad promoted globalisation</li>
+      <li><strong>Less protectionism & tariff-free trade zones</strong> — Opened borders to more trade</li>
+      <li><strong>Capitalistic strategies & profit maximization</strong> — Companies seek new markets globally</li>
+      <li><strong>Electronic payment systems</strong> — e-wallets, mobile pay, pre-pay promoted cross-border transactions</li>
+      <li><strong>Increased capital mobility</strong> — Global credit markets promoted investment across borders</li>
+      <li><strong>Increase in free trade</strong> — Promoted globalisation</li>
+      <li><strong>Agents of globalisation</strong> — UNO, AU, EEC led growth of globalisation</li>
+      <li><strong>International economic integration</strong> — Trade blocs like NAFTA (US, Mexico, Canada) and EAC (East Africa) reduced border barriers</li>
+      <li><strong>Growth of NGOs and CBOs</strong> — Promoted globalisation in Uganda</li>
+      <li><strong>Socio-cultural convergence</strong> — Social media and online news; people adopting global cultures (e.g. fashion)</li>
+      <li><strong>Global education providers</strong> — Online learning; internationally accepted qualifications</li>
+      <li><strong>Cross-border political influence</strong> — China's long-term loans to East African countries</li>
+      <li><strong>Financial liberalization</strong> — Easy exchange of money to global currencies (US dollar, British pound)</li>
+      <li><strong>Intense competition among firms</strong> — Pushing businesses to find new global markets</li>
+    </ul>
+    <div class="exam-tip">
+      <div class="tip-label">💡 Exam Tip</div>
+      The conclusion in your notes summarises: digital revolution; international economic integration; socio-cultural convergence; global education; cross-border political influence; financial liberalization; and intense competition — memorise these as the headline drivers.
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: ADVANTAGES / MERITS -->
+<div class="section s2">
+  <div class="section-header" onclick="toggle(this)">
+    <div class="section-icon">✅</div>
+    <div class="section-title">Advantages / Merits of Globalisation</div>
+    <div class="toggle">▾</div>
+  </div>
+  <div class="section-body">
+    <ul class="points green-bullet">
+      <li><strong>Wider talent pool</strong> — Companies hire from all over the world; better efficiency and production</li>
+      <li><strong>Cultural diversity & workforce</strong> — Multiple cultural backgrounds produce better ideas</li>
+      <li><strong>New and larger markets</strong> — Increased specialisation opportunities</li>
+      <li><strong>Higher living standards</strong> — Health and welfare achievements improved</li>
+      <li><strong>Free trade reduces barriers</strong> — Tariffs lowered; better balance of trade</li>
+      <li><strong>Competition drives down prices</strong> — Better quality goods and living standards</li>
+      <li><strong>Capital and technology for developing countries</strong> — Poor countries get resources to develop</li>
+      <li><strong>Democracy and human rights flourish</strong> — Better global governance conditions created</li>
+      <li><strong>Better information between countries</strong> — Even countries with nothing in common exchange ideas</li>
+      <li><strong>Cultural infusion</strong> — Countries learn each other's cultures; greater tolerance</li>
+      <li><strong>Quick dissemination of information</strong> — Faster, better means of travel and communication</li>
+      <li><strong>Labour mobility</strong> — Workers market their skills across countries</li>
+      <li><strong>Technology sharing</strong> — Leads to progress especially in young nations</li>
+      <li><strong>Employment opportunities</strong> — Created when multilateral companies invest in developing countries</li>
+      <li><strong>Free trade agreements</strong> — e.g. NAFTA; resource pooling like joint space station construction</li>
+      <li><strong>Reduced tyranny and oppression</strong> — Especially in poor young nations under constant global check</li>
+      <li><strong>Eliminates trade inefficiencies</strong> — Through elimination of tariffs etc.</li>
+      <li><strong>Attracts foreign capital and technology</strong> — Improved quality of production</li>
+      <li><strong>Peaceful relations</strong> — Countries put aside bitter past experiences</li>
+      <li><strong>Environmental conservation</strong> — Global cooperation on environment</li>
+      <li><strong>Balanced development of world economies</strong></li>
+      <li><strong>Industrial development in East Africa</strong> — Free flow of technology</li>
+      <li><strong>Promotes global legal regimes</strong></li>
+      <li><strong>Global peace through intervention where necessary</strong></li>
+      <li><strong>Improved governance</strong> — Better labour protection through competitive pressures</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION 4: DISADVANTAGES / DEMERITS -->
+<div class="section s3">
+  <div class="section-header" onclick="toggle(this)">
+    <div class="section-icon">❌</div>
+    <div class="section-title">Disadvantages / Demerits of Globalisation</div>
+    <div class="toggle">▾</div>
+  </div>
+  <div class="section-body">
+    <ul class="points red-bullet">
+      <li><strong>Reduced earnings for low-skilled workers</strong> — Especially in developing countries</li>
+      <li><strong>Social injustice</strong> — MNCs exploit workers; slave labour wages; poor working conditions</li>
+      <li><strong>Food price inflation (Agflation)</strong> — Strong demand has led to steep inflation affecting poor countries</li>
+      <li><strong>Vulnerability to external economic shocks</strong> — Financial crisis in USA can affect Uganda</li>
+      <li><strong>Environmental damage</strong> — Land degradation, deforestation, loss of biodiversity</li>
+      <li><strong>Trade imbalances</strong> — Poor countries like Uganda disadvantaged</li>
+      <li><strong>Foreign multinationals influence politics</strong> — In some parts of the world</li>
+      <li><strong>Intellectual property theft</strong> — Products easily replicated in other countries</li>
+      <li><strong>Internal communication challenges</strong> — When people don't work in same location</li>
+      <li><strong>Rising inequalities</strong> — Rich countries richer, poor countries poorer</li>
+      <li><strong>Jobs transferred to low-cost countries (offshoring)</strong> — Local jobs lost</li>
+      <li><strong>Salary cuts in developed countries</strong> — Threat of export of jobs</li>
+      <li><strong>MNCs exploit tax havens</strong> — Avoid paying taxes</li>
+      <li><strong>Spread of deadly diseases</strong> — HIV/AIDS, COVID-19 spread through global travel</li>
+      <li><strong>Social welfare (safety nets) under pressure</strong> — Due to job losses</li>
+      <li><strong>Loss of cultural identities</strong> — Cultural imperialism</li>
+      <li><strong>Environmental damage</strong> — Greenhouse gas emissions</li>
+      <li><strong>Superiority of bigger nations over smaller ones</strong></li>
+      <li><strong>Neo-colonialism</strong> — And associated evils</li>
+      <li><strong>More imports than exports</strong> — Growing trade deficit and balance of payment issues</li>
+      <li><strong>Small scale industries wiped out</strong> — By multilateral companies</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION 5: POSITIVE & NEGATIVE EFFECTS ON UGANDA -->
+<div class="section s4">
+  <div class="section-header" onclick="toggle(this)">
+    <div class="section-icon">🇺🇬</div>
+    <div class="section-title">Effects of Globalisation on Uganda (Positive & Negative)</div>
+    <div class="toggle">▾</div>
+  </div>
+  <div class="section-body">
+    <div class="two-col">
+      <div class="col-card">
+        <div class="col-title" style="color:var(--green)">✅ Positive Effects</div>
+        <ul class="points green-bullet" style="margin-top:0">
+          <li>Improved standards of living</li>
+          <li>Better quality of life</li>
+          <li>Promoted economic development of poor countries</li>
+          <li>Economies of scale — reduced production costs</li>
+          <li>Tool for prosperity and peace</li>
+          <li>Better cooperation and collaboration</li>
+          <li>Goods reach many corners at low prices</li>
+          <li>More profits → more customers</li>
+          <li>Better quality and variety of goods</li>
+          <li>Spread of technology, innovation and ideas</li>
+          <li>Employment for high-skilled workers</li>
+          <li>Infrastructural development</li>
+          <li>Better utilization of available resources</li>
+          <li>Better relationships among countries</li>
+          <li>Promotion of education</li>
+          <li>Better health services</li>
+          <li>Promotion of democratic values</li>
+          <li>More peaceful and stable world</li>
+          <li>Sharing of cultural values</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <div class="col-title" style="color:var(--red)">❌ Negative Effects</div>
+        <ul class="points red-bullet" style="margin-top:0">
+          <li>Benefits MNCs of West at expense of Uganda</li>
+          <li>Low-skilled lose employment opportunities</li>
+          <li>Vulnerability to external economic shocks</li>
+          <li>Environmental damage (deforestation, biodiversity loss)</li>
+          <li>Trade imbalances</li>
+          <li>Foreign multinationals influence political decisions</li>
+          <li>Rising inequalities — rich richer, poor poorer</li>
+          <li>MNCs exploit tax havens</li>
+          <li>Deadly diseases spread (HIV/AIDS, COVID-19)</li>
+          <li>Safety nets under pressure</li>
+          <li>Loss of cultural identities</li>
+          <li>Greenhouse gas, CO₂ emissions</li>
+          <li>Superiority of bigger nations</li>
+          <li>Neo-colonialism in Uganda</li>
+          <li>Trade deficit and balance of payment issues</li>
+          <li>Small scale industries wiped out</li>
+          <li>Low growth of agriculture sector</li>
+          <li>Rise in rural-urban divide</li>
+          <li>Human rights violations</li>
+          <li>De-industrialization</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: CHALLENGES OF GLOBALISATION -->
+<div class="section s5">
+  <div class="section-header" onclick="toggle(this)">
+    <div class="section-icon">⚠️</div>
+    <div class="section-title">Challenges of Globalisation (for Businesses)</div>
+    <div class="toggle">▾</div>
+  </div>
+  <div class="section-body">
+ 
